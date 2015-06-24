@@ -7,6 +7,8 @@ endif
 "  To save file without hitting escape key 
 "call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags()
+"
+"
 imap <c-s> <c-o><c-s><CR>
 
 map <D-S-]> gt
@@ -24,10 +26,11 @@ map <D-9> 9gt
 map <D-0> :tablast<CR>
 " Insert mode keys
 "
-imap <F2> ================================================================
+imap <F2> use Data::Dumper;
 imap <F3> echo '<pre>'; print_r($
 imap <F5> printf("
 imap <F4> USE dumper;'<pre>'; dumper.dump(  );'</pre>';STOP;
+
 
 " file explore
 map <F6> :Vexplore<CR>
