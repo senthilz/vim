@@ -13,6 +13,3 @@
 [submodule "bundle/emmet"]
 	path = bundle/emmet
 	url = https://github.com/mattn/emmet-vim.git
-[submodule "bundle/bundle/perlsupport"]
-	path = bundle/bundle/perlsupport
-	url = https://github.com/WolfgangMehner/perl-support.git
