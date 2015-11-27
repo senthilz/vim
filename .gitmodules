@@ -13,3 +13,6 @@
 [submodule "bundle/emmet"]
 	path = bundle/emmet
 	url = https://github.com/mattn/emmet-vim.git
+[submodule "bundle/perltidy"]
+	path = bundle/perltidy
+	url = https://github.com/rdunklau/vim-perltidy.git

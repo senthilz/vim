@@ -131,4 +131,11 @@ endfunction
 "https://www.youtube.com/watch?v=4NtT3WTxvqs
 set keywordprg=perldoc\ -f
 " keywordprg binds to shift K by default
+"
+set cursorcolumn
+set cursorline
+
+if exists('+colorcolumn')
+  set colorcolumn=80
+endif
 
