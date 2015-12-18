@@ -136,6 +136,7 @@ set cursorcolumn
 set cursorline
 
 if exists('+colorcolumn')
-  set colorcolumn=80
+  set colorcolumn=120
 endif
 
+set laststatus=2
