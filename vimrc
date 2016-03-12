@@ -22,7 +22,6 @@ map <D-6> 6gt
 map <D-7> 7gt
 map <D-8> 8gt
 map <D-9> 9gt
-
 map <D-0> :tablast<CR>
 " Insert mode keys
 "
@@ -35,7 +34,6 @@ imap <F4> USE dumper;'<pre>'; dumper.dump(  );'</pre>';STOP;
 " file explore
 map <F6> :Vexplore<CR>
 " KEY MAPS
-" Mapped the set list! command to \l key board shortcut
 nmap <leader>c :set cursorcolumn!<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>h :set hls!<CR>
@@ -46,6 +44,8 @@ nmap <leader>f :FufFile<CR>
 nmap <leader>d :FufDir<CR>
 nmap <leader>b :FufBuffer<CR>
 nmap <leader>e :NERDTree<CR>
+
+nmap <leader>gst :Git status<CR>
 " -------------------------------------
 "Following short cut keys will work with Crtl+starting alphabet of the function
 "nmap <silent> <C-h> <Esc>:call ToggleHLSearch()<CR>
@@ -132,9 +132,6 @@ endfunction
 set keywordprg=perldoc\ -f
 " keywordprg binds to shift K by default
 "
-set cursorcolumn
-set cursorline
-
 if exists('+colorcolumn')
   set colorcolumn=120
 endif
