@@ -61,7 +61,6 @@ set autoindent
 set smarttab
 set nu
 set expandtab
-set cursorcolumn
 set ruler "for row/column number
 
 set sts=2
@@ -128,9 +127,6 @@ endfunction
 "
 "Execute once the file is saved
 "
-"https://www.youtube.com/watch?v=4NtT3WTxvqs
-set keywordprg=perldoc\ -f
-" keywordprg binds to shift K by default
 "
 if exists('+colorcolumn')
   set colorcolumn=120
