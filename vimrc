@@ -26,8 +26,6 @@ map <D-0> :tablast<CR>
 " Insert mode keys
 "
 imap <F2> use Data::Dumper;
-imap <F3> echo '<pre>'; print_r($
-imap <F5> printf("
 imap <F4> USE dumper;'<pre>'; dumper.dump(  );'</pre>';STOP;
 
 
@@ -39,6 +37,7 @@ nmap <leader>l :set list!<CR>
 nmap <leader>h :set hls!<CR>
 nmap <leader>n :set nu!<CR>
 nmap <leader>t :set et!<CR>
+nmap <leader>p :set paste!<CR>
 nmap <leader>w :set wrap!<CR>
 nmap <leader>f :FufFile<CR>
 nmap <leader>d :FufDir<CR>
@@ -46,6 +45,7 @@ nmap <leader>b :FufBuffer<CR>
 nmap <leader>e :NERDTree<CR>
 
 nmap <leader>gst :Git status<CR>
+
 " -------------------------------------
 "Following short cut keys will work with Crtl+starting alphabet of the function
 "nmap <silent> <C-h> <Esc>:call ToggleHLSearch()<CR>
@@ -62,13 +62,15 @@ set smarttab
 set nu
 set expandtab
 set ruler "for row/column number
-
 set sts=2
 set ts=2
 set sw=2
 set si
-"set nowrap
 set hls
+
+if exists('+colorcolumn')
+  set colorcolumn=120
+endif
 
 syntax on
 filetype plugin on
@@ -101,35 +103,3 @@ function! SummarizeTabs()
     echohl None
   endtry
 endfunction
-
-" Function to toggle Linenumbers search
-"function! ToggleLineNumber()
-"   if &nu
-"     set nonu
-"   else
-"      set nu
-"   endif
-"endfunction
-
-" Function to toggle Highlight search
-"function! ToggleHLSearch()
-"   if &hls
-"     set nohls
-"   else
-"      set hls
-"   endif
-"endfunction
-
-" Abbreavtions
-" iab => insert mode abbrevs ab => in escape mode
-" iab   q echo '<pre>';print_r($ );echo'</pre>';exit;
-"
-"
-"Execute once the file is saved
-"
-"
-if exists('+colorcolumn')
-  set colorcolumn=120
-endif
-
-set laststatus=2
