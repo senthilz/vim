@@ -3,11 +3,14 @@ execute pathogen#infect()
 if has("autocmd")
   filetype plugin indent on
 endif
-" 
+
+" perltidy - http://www.perlmonks.org/?node_id=540167
+nnoremap <silent> _t :%!perltidy -q<Enter>
+vnoremap <silent> _t :!perltidy -q<Enter>
+
 "  To save file without hitting escape key 
 "call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags()
-"
 "
 imap <c-s> <c-o><c-s><CR>
 

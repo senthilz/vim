@@ -1,9 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/senthil/.oh-my-zsh'
-let g:netrw_dirhist_2='/Users/senthil/repos/z/ci/cricinfo/trunk/usr/share/perl5/WCMS'
-let g:netrw_dirhist_3='/Users/senthil'
-let g:netrw_dirhist_4='/Users/senthil/repos/z/sprinklr-perl/2/SPR/lib'
-let g:netrw_dirhist_5='/Users/senthil/repos/technology-operations/perl/custom_project/verizon'
-let g:netrw_dirhist_6='/Users/senthil/repos/technology-operations/perl/dr/bin/sync'
-let g:netrw_dirhist_7='/Users/senthil/repos/technology-operations/ansible/roles/perlbrew/files'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/senthil/repos/z/homepage/zen/public/jbrowse/data/ecoli'
+let g:netrw_dirhist_2='/Users/senthil/repos/z/vetbrowser/views/layouts'
+let g:netrw_dirhist_3='/Users/senthil/repos/z/rnd/s3'
+let g:netrw_dirhist_4='/Users/senthil/repos/technology-operations/turbo/lib/Turbo'
+let g:netrw_dirhist_5='/Users/senthil/repos/z/zulk/lib/Hulk/Base'
+let g:netrw_dirhist_6='/Users/senthil/repos/z/zulk/lib/Hulk/I18N'
