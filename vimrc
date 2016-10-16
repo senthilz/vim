@@ -1,39 +1,31 @@
-execute pathogen#infect()
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-if has("autocmd")
-  filetype plugin indent on
-endif
+Plugin 'gmarik/vundle'
+"Plugin 'MarkdownFootnotes'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+
+filetype plugin indent on
 
 " perltidy - http://www.perlmonks.org/?node_id=540167
 nnoremap <silent> _t :%!perltidy -q<Enter>
 vnoremap <silent> _t :!perltidy -q<Enter>
 
 "  To save file without hitting escape key 
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
 "
 imap <c-s> <c-o><c-s><CR>
 
-map <D-S-]> gt
-map <D-S-[> gT
-map <D-1> 1gt
-map <D-2> 2gt
-map <D-3> 3gt
-map <D-4> 4gt
-map <D-5> 5gt
-map <D-6> 6gt
-map <D-7> 7gt
-map <D-8> 8gt
-map <D-9> 9gt
-map <D-0> :tablast<CR>
 " Insert mode keys
 "
 imap <F2> use Data::Dumper;
 imap <F4> USE dumper;'<pre>'; dumper.dump(  );'</pre>';STOP;
 
-
-" file explore
-map <F6> :Vexplore<CR>
 " KEY MAPS
 nmap <leader>c :set cursorcolumn!<CR>
 nmap <leader>l :set list!<CR>
@@ -46,8 +38,6 @@ nmap <leader>f :FufFile<CR>
 nmap <leader>d :FufDir<CR>
 nmap <leader>b :FufBuffer<CR>
 nmap <leader>e :NERDTree<CR>
-
-nmap <leader>gst :Git status<CR>
 
 " -------------------------------------
 "Following short cut keys will work with Crtl+starting alphabet of the function
@@ -76,8 +66,7 @@ if exists('+colorcolumn')
 endif
 
 syntax on
-filetype plugin on
-autocmd FileType perl set smartindent
+"autocmd FileType perl set smartindent
 
 " Set tabstop, softtabstop and shiftwidth to the same value
 command! -nargs=* Stab call Stab()
