@@ -5,7 +5,9 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Plugin 'gmarik/vundle'
+Plugin 'kablamo/VimDebug'
 "Plugin 'MarkdownFootnotes'
+Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
@@ -18,6 +20,13 @@ filetype plugin indent on
 nnoremap <silent> _t :%!perltidy -q<Enter>
 vnoremap <silent> _t :!perltidy -q<Enter>
 
+" dont use Q for Ex mode
+map Q :q
+
+" comment/uncomment blocks of code (in vmode)
+vmap _c :s/^/#/gi<Enter>
+vmap _C :s/^#//gi<Enter>
+
 "  To save file without hitting escape key 
 "
 imap <c-s> <c-o><c-s><CR>
@@ -26,6 +35,10 @@ imap <c-s> <c-o><c-s><CR>
 "
 imap <F2> use Data::Dumper;
 imap <F4> USE dumper;'<pre>'; dumper.dump(  );'</pre>';STOP;
+
+" Folds block of code
+set foldmethod=marker
+nmap <F2> 0v/{<CR>%zf
 
 " KEY MAPS
 nmap <leader>c :set cursorcolumn!<CR>
