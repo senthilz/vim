@@ -1,18 +1,26 @@
+" 
+"
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vundle
+"
+"
 set encoding=utf-8
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+
+set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Plugin 'gmarik/vundle'
 "Plugin 'kablamo/VimDebug'
 "Plugin 'MarkdownFootnotes'
 Plugin 'mattn/emmet-vim'
+"Plugin 'WolfgangMehner/perl-support'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
+Plugin 'shawncplus/phpcomplete.vim'
 
 filetype plugin indent on
 
@@ -23,7 +31,15 @@ vnoremap <silent> _t :!perltidy -q<Enter>
 " dont use Q for Ex mode
 map Q :q
 
-" comment/uncomment blocks of code (in vmode)
+
+nnoremap <Up> :echomsg "use k"<cr>
+nnoremap <Down> :echomsg "use j"<cr>
+nnoremap <Left> :echomsg "use h"<cr>
+nnoremap <Right> :echomsg "use l"<cr>
+" check syntax with Ctrl + L
+autocmd FileType php noremap <C-L> :!/usr/bin/env php -l %<CR>
+autocmd FileType phtml noremap <C-L> :!/usr/bin/env php -l %<CR>
+
 vmap _c :s/^/#/gi<Enter>
 vmap _C :s/^#//gi<Enter>
 
@@ -106,3 +122,13 @@ function! SummarizeTabs()
     echohl None
   endtry
 endfunction
+
+" Focus main window, not NERDTree
+"augroup NERD
+"  autocmd!
+"  autocmd VimEnter * NERDTree
+"  autocmd VimEnter * wincmd p
+"augroup END
+
+" For serious
+let NERDTreeShowHidden=1
