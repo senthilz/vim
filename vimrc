@@ -19,6 +19,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'L9'
+Plugin 'vim-perl-ide'
 Plugin 'FuzzyFinder'
 Plugin 'shawncplus/phpcomplete.vim'
 
@@ -32,10 +33,10 @@ vnoremap <silent> _t :!perltidy -q<Enter>
 map Q :q
 
 
-nnoremap <Up> :echomsg "use k"<cr>
-nnoremap <Down> :echomsg "use j"<cr>
-nnoremap <Left> :echomsg "use h"<cr>
-nnoremap <Right> :echomsg "use l"<cr>
+"nnoremap <Up> :echomsg "use k"<cr>
+"nnoremap <Down> :echomsg "use j"<cr>
+"nnoremap <Left> :echomsg "use h"<cr>
+"nnoremap <Right> :echomsg "use l"<cr>
 " check syntax with Ctrl + L
 autocmd FileType php noremap <C-L> :!/usr/bin/env php -l %<CR>
 autocmd FileType phtml noremap <C-L> :!/usr/bin/env php -l %<CR>
@@ -96,18 +97,18 @@ syntax on
 "autocmd FileType perl set smartindent
 
 " Set tabstop, softtabstop and shiftwidth to the same value
-command! -nargs=* Stab call Stab()
-function! Stab()
+command! -nargs=* SetTab call SetTab()
+function! SetTab()
   let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
   if l:tabstop > 0
     let &l:sts = l:tabstop
     let &l:ts = l:tabstop
     let &l:sw = l:tabstop
   endif
-  call SummarizeTabs()
+  call ShowTabs()
 endfunction
  
-function! SummarizeTabs()
+function! ShowTabs()
   try
     echohl ModeMsg
     echon 'tabstop='.&l:ts
