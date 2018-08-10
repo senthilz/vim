@@ -1,7 +1,5 @@
-" 
 "
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vundle
-"
 "
 set encoding=utf-8
 set nocompatible
@@ -11,19 +9,28 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Plugin 'gmarik/vundle'
+Plugin 'w0rp/ale'
+Plugin 'rking/ag.vim'
 "Plugin 'kablamo/VimDebug'
 "Plugin 'MarkdownFootnotes'
 Plugin 'mattn/emmet-vim'
+Plugin 'mileszs/ack.vim'
 "Plugin 'WolfgangMehner/perl-support'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'L9'
-Plugin 'vim-perl-ide'
 Plugin 'FuzzyFinder'
 Plugin 'shawncplus/phpcomplete.vim'
 
 filetype plugin indent on
+
+augroup New_File_Setup
+    autocmd!
+    autocmd BufNewFile   *  -1r !vim_file_template <afile>
+    autocmd BufNewFile   *  :silent call search('^[ \t]*[#"].*implementation[ \t]\+here')
+    autocmd BufNewFile   *  :redraw
+augroup END
 
 " perltidy - http://www.perlmonks.org/?node_id=540167
 nnoremap <silent> _t :%!perltidy -q<Enter>
@@ -32,15 +39,11 @@ vnoremap <silent> _t :!perltidy -q<Enter>
 " dont use Q for Ex mode
 map Q :q
 
-
 "nnoremap <Up> :echomsg "use k"<cr>
 "nnoremap <Down> :echomsg "use j"<cr>
 "nnoremap <Left> :echomsg "use h"<cr>
 "nnoremap <Right> :echomsg "use l"<cr>
 " check syntax with Ctrl + L
-autocmd FileType php noremap <C-L> :!/usr/bin/env php -l %<CR>
-autocmd FileType phtml noremap <C-L> :!/usr/bin/env php -l %<CR>
-
 vmap _c :s/^/#/gi<Enter>
 vmap _C :s/^#//gi<Enter>
 
@@ -133,3 +136,9 @@ endfunction
 
 " For serious
 let NERDTreeShowHidden=1
+
+
+let g:ale_completion_enabled = 1
+"show errors or warnings in my statusline
+let g:airline#extensions#ale#enabled = 1
+
