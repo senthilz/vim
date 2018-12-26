@@ -1,27 +1,21 @@
-"
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vundle
-"
 set encoding=utf-8
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Plugin 'gmarik/vundle'
-Plugin 'w0rp/ale'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'rking/ag.vim'
-"Plugin 'kablamo/VimDebug'
-"Plugin 'MarkdownFootnotes'
+Plugin 'w0rp/ale'
 Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
-"Plugin 'WolfgangMehner/perl-support'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
-Plugin 'L9'
+Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'FuzzyFinder'
-Plugin 'shawncplus/phpcomplete.vim'
+call vundle#end()
 
 filetype plugin indent on
 
