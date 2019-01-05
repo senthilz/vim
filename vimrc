@@ -22,6 +22,11 @@ call vundle#end()
 " https://github.com/scrooloose/nerdtree/issues/928
 let g:NERDTreeNodeDelimiter = "\u00a0"
 
+" https://medium.com/@victormours/a-better-nerdtree-setup-3d3921abc0b9
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+nnoremap <silent> <Leader>v :NERDTreeFind<CR>
+
 " terraform
 let g:terraform_fmt_on_save=1
 let g:terraform_align=1
