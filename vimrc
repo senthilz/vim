@@ -15,7 +15,16 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'FuzzyFinder'
+Plugin 'hashivim/vim-terraform'
 call vundle#end()
+
+" Fix for ^G appearing in the dir list 
+" https://github.com/scrooloose/nerdtree/issues/928
+let g:NERDTreeNodeDelimiter = "\u00a0"
+
+" terraform
+let g:terraform_fmt_on_save=1
+let g:terraform_align=1
 
 filetype plugin indent on
 
