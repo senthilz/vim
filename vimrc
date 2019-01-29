@@ -6,7 +6,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'rking/ag.vim'
 Plugin 'w0rp/ale'
 Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
@@ -16,6 +15,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'FuzzyFinder'
 Plugin 'hashivim/vim-terraform'
+Plugin 'fatih/vim-go'
 call vundle#end()
 
 " Fix for ^G appearing in the dir list 
