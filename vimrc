@@ -16,6 +16,7 @@ Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'FuzzyFinder'
 Plugin 'hashivim/vim-terraform'
 Plugin 'fatih/vim-go'
+Plugin 'beautify-web/js-beautify'
 call vundle#end()
 
 " Fix for ^G appearing in the dir list 
@@ -33,12 +34,6 @@ let g:terraform_align=1
 
 filetype plugin indent on
 
-augroup New_File_Setup
-    autocmd!
-    autocmd BufNewFile   *  -1r !vim_file_template <afile>
-    autocmd BufNewFile   *  :silent call search('^[ \t]*[#"].*implementation[ \t]\+here')
-    autocmd BufNewFile   *  :redraw
-augroup END
 
 " perltidy - http://www.perlmonks.org/?node_id=540167
 nnoremap <silent> _t :%!perltidy -q<Enter>
